@@ -6,7 +6,7 @@ public class Main {
         JFrame jp = new JFrame();
         jp.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
         jp.setContentPane(new LogIn().Login);
-        jp.setSize(500,550);
+        jp.setSize(500,590);
         jp.setResizable(false);
         jp.setLocationRelativeTo(null);
         jp.setVisible(true); //Hola
