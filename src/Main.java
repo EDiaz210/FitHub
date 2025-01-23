@@ -9,6 +9,6 @@ public class Main {
         jp.setSize(500,550);
         jp.setResizable(false);
         jp.setLocationRelativeTo(null);
-        jp.setVisible(true);
+        jp.setVisible(true); //Hola
     }
 }
