@@ -37,7 +37,7 @@ public class LogIn {
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
 
-                                }else if(resultSet.getString("rol").equals("usuario")){
+                                }else if(resultSet.getString("rol").equals("miembro")){
                                     System.out.println("Ingresaste a modo usuario ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
