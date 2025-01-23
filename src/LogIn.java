@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -25,9 +26,10 @@ public class LogIn {
                     if(resultSet.next()) {
                         if (comboBox1.getSelectedItem().equals(resultSet.getString("rol"))){
                             if(textField1.getText().equals(resultSet.getString("usuario")) && new String(passwordField1.getPassword()).equals(resultSet.getString("contraseña"))) {
-                                if(resultSet.getString("rol").equals("administrador")){
+                                if(resultSet.getString("rol").equals("administrador")) {
                                     System.out.println("Ingresaste a modo administrador ");
                                     JFrame frame = new JFrame();
+                                    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
                                     frame.setSize(350, 300);
                                     frame.setContentPane(new MenuAdmin().menu);
@@ -38,6 +40,7 @@ public class LogIn {
                                 }else if(resultSet.getString("rol").equals("usuario")){
                                     System.out.println("Ingresaste a modo usuario ");
                                     JFrame frame = new JFrame();
+                                    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
                                     frame.setSize(350, 300);
                                     frame.setContentPane(new MenuMiembros().menu);
