@@ -49,4 +49,8 @@ public class MenuAdmin {
             }
         });
     }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
