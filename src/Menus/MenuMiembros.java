@@ -1,5 +1,7 @@
+package Menus;
+
 import javax.swing.*;
 
-public class MenuAdmin {
+public class MenuMiembros {
     public JPanel menu;
 }

@@ -1,3 +1,6 @@
+import Menus.MenuAdmin;
+import Menus.MenuMiembros;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
