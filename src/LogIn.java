@@ -22,14 +22,14 @@ public class LogIn {
             public void actionPerformed(ActionEvent e) {
                 try (Connection connection = ConexionBD.getConnection()) {
                     Statement statement = connection.createStatement();
-                    String query = "SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "' AND contrasenia = '" + new String(passwordField1.getPassword()) + "' AND rol = '" + comboBox1.getSelectedItem().toString() + "'";
+                    String query = "SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "'";
                     ResultSet resultSet = statement.executeQuery(query);
 
 
                     if(resultSet.next()) {
-                        if (comboBox1.getSelectedItem().equals(resultSet.getString("rol"))){
-                            if(textField1.getText().equals(resultSet.getString("usuario")) && new String(passwordField1.getPassword()).equals(resultSet.getString("contraseña"))) {
-                                if(resultSet.getString("rol").equals("administrador")) {
+                        if (comboBox1.getSelectedItem().equals(resultSet.getString("rol"))) {
+                            if (textField1.getText().equals(resultSet.getString("usuario"))) {
+                                if (resultSet.getString("rol").equals("administrador")) {
                                     System.out.println("Ingresaste a modo administrador ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
@@ -40,7 +40,7 @@ public class LogIn {
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
 
-                                }else if(resultSet.getString("rol").equals("miembro")){
+                                } else if (resultSet.getString("rol").equals("miembro")) {
                                     System.out.println("Ingresaste a modo usuario ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
@@ -50,20 +50,33 @@ public class LogIn {
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
+
+                                }else if (resultSet.getString("rol").equals("entrenador")) {
+                                    System.out.println("Ingresaste a modo usuario ");
+                                    JFrame frame = new JFrame();
+                                    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
+                                    frame.setTitle("Login");
+                                    frame.setSize(350, 300);
+                                    frame.setContentPane(new MenuMiembros().menu);
+                                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                    frame.setVisible(true);
+                                    ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
+
                                 }
 
                             }
-                        }else {
-                            JOptionPane.showInputDialog("Digite correctamente las credenciales");
                         }
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
+                    JOptionPane.showInputDialog("Digite correctamente las credenciales");
 
                 }
             }
         });
     }
+
+
 
     public static class ConexionBD {
         private static final String url = "jdbc:mysql://uu0mrbdpzuyyx7gg:qQKJg3BOiryNGsrQdFYP@bjbwtijcisxcuwxsxuat-mysql.services.clever-cloud.com:3306/bjbwtijcisxcuwxsxuat";
