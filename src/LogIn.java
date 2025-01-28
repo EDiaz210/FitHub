@@ -57,7 +57,7 @@ public class LogIn {
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
                                     frame.setSize(350, 300);
-                                    frame.setContentPane(new MenuMiembros().menu);
+                                    frame.setContentPane(new MenuAdmin().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
