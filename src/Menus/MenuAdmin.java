@@ -1,6 +1,7 @@
 package Menus;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,36 +22,16 @@ public class MenuAdmin {
     private JButton agregarServicioButton;
     private JButton verServiciosButton;
     private JButton buscarServicioButton;
+    private JLabel fitTrackHubLabel;
+    private JPanel panel1;
 
     public MenuAdmin() {
-        crearMiembroButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-            });
 
-        eliminarUsuarioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        actualizarMiembroButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        buscarMiembroButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+
+
+
+
     }
-}

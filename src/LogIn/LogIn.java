@@ -1,6 +1,7 @@
+package LogIn;
+
 import Menus.MenuAdmin;
 import Menus.MenuMiembros;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,6 @@ import java.sql.*;
 
 public class LogIn {
     private JTextField textField1;
-    private JPasswordField passwordField1;
     private JLabel ImagenLogin;
     private JComboBox comboBox1;
     private JButton ingresarButton;
@@ -22,14 +22,14 @@ public class LogIn {
             public void actionPerformed(ActionEvent e) {
                 try (Connection connection = ConexionBD.getConnection()) {
                     Statement statement = connection.createStatement();
-                    String query = "SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "'";
+                    String query = "SELECT * FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
                     ResultSet resultSet = statement.executeQuery(query);
 
 
                     if(resultSet.next()) {
                         if (comboBox1.getSelectedItem().equals(resultSet.getString("rol"))) {
-                            if (textField1.getText().equals(resultSet.getString("usuario"))) {
-                                if (resultSet.getString("rol").equals("administrador")) {
+                            if (textField1.getText().equals(resultSet.getString("cedula_usuario"))) {
+                                if (resultSet.getString("rol").equals("Administrador")) {
                                     System.out.println("Ingresaste a modo administrador ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
@@ -40,7 +40,7 @@ public class LogIn {
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
 
-                                } else if (resultSet.getString("rol").equals("miembro")) {
+                                } else if (resultSet.getString("rol").equals("Miembro")) {
                                     System.out.println("Ingresaste a modo usuario ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
@@ -51,7 +51,7 @@ public class LogIn {
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
 
-                                }else if (resultSet.getString("rol").equals("entrenador")) {
+                                }else if (resultSet.getString("rol").equals("Entrenador")) {
                                     System.out.println("Ingresaste a modo usuario ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
@@ -69,7 +69,7 @@ public class LogIn {
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showInputDialog("Digite correctamente las credenciales");
+                    JOptionPane.showMessageDialog(null,"Digite correctamente las credenciales");
 
                 }
             }
@@ -79,9 +79,9 @@ public class LogIn {
 
 
     public static class ConexionBD {
-        private static final String url = "jdbc:mysql://uu0mrbdpzuyyx7gg:qQKJg3BOiryNGsrQdFYP@bjbwtijcisxcuwxsxuat-mysql.services.clever-cloud.com:3306/bjbwtijcisxcuwxsxuat";
-        private static final String username = "uu0mrbdpzuyyx7gg";
-        private static final String password = "qQKJg3BOiryNGsrQdFYP";
+        private static final String url = "jdbc:mysql://localhost:3306/fithub";
+        private static final String username = "root";
+        private static final String password = "123456";
         public static Connection getConnection() throws SQLException {
             return DriverManager.getConnection(url,username, password);
         }
