@@ -1,6 +1,6 @@
 package LogIn;
 
-import Menus.MenuAdmin;
+import Menus.MenuAdm;
 import Menus.MenuMiembros;
 import javax.swing.*;
 import java.awt.*;
@@ -34,8 +34,8 @@ public class LogIn {
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(350, 300);
-                                    frame.setContentPane(new MenuAdmin().menu);
+                                    frame.setSize(350, 350);
+                                    frame.setContentPane(new MenuAdm().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
@@ -56,8 +56,8 @@ public class LogIn {
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(350, 300);
-                                    frame.setContentPane(new MenuAdmin().menu);
+                                    frame.setSize(350, 350);
+                                    frame.setContentPane(new MenuAdm().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setVisible(true);
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();

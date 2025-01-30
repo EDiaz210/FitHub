@@ -1,6 +1,9 @@
 package Pagos;
 
+import javax.swing.*;
+
 public class AgregarPago {
-    public static class BuscarPago {
-    }
+    public JPanel ARP;
+
+
 }
