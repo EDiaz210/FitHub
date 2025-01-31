@@ -1,4 +1,4 @@
-package Administradores;
+package Entrenadores;
 
 import javax.swing.*;
 

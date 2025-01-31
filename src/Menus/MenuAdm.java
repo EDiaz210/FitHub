@@ -1,8 +1,9 @@
 package Menus;
 
-import Administradores.ActuAdm;
-import Administradores.BuscarAdm;
-import Administradores.ElimAdm;
+import Entrenadores.ActuAdm;
+import Entrenadores.BuscarAdm;
+import Entrenadores.CrearAdm;
+import Entrenadores.ElimAdm;
 import LogIn.LogIn;
 import Miembros.BuscarMiem;
 import Miembros.CrearMiem;
@@ -106,7 +107,7 @@ public class MenuAdm {
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Crear Miembro");
                 frame.setSize(350, 350);
-                frame.setContentPane(new BuscarAdm().BADM);
+                frame.setContentPane(new CrearAdm().CADM);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(crearEntrenadorButton)).dispose();
