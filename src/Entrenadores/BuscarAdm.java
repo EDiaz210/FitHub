@@ -1,4 +1,4 @@
-package Miembros;
+package Entrenadores;
 
 import LogIn.LogIn;
 import Menus.MenuAdm;
@@ -7,19 +7,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class EliminarMiem {
-    public JPanel ElimMiem;
+public class BuscarAdm {
     private JTextField textField1;
-    private JButton eliminarButton;
-    private JLabel ImagenLogin;
+    private JButton buscarButton;
+    public JPanel BADM;
+    private JLabel id;
+    private JLabel nombre;
+    private JLabel edad;
+    private JLabel sueldo;
+    private JLabel rol;
     private JButton volverButton;
 
-    public EliminarMiem() {
-        eliminarButton.addActionListener(new ActionListener() {
+    public BuscarAdm() {
+        buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -39,22 +41,29 @@ public class EliminarMiem {
 
 
                 try (Connection connection = LogIn.ConexionBD.getConnection()) {
-                    System.out.println("Conectado a la base de datos");
 
-                    String query = "DELETE  FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
+                    String Usuariosquery = "SELECT * FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
+                    String Entrenadoresquery = "SELECT * FROM entrenadores WHERE entrenador_id = '" + textField1.getText() + "'";
                     Statement statement = connection.createStatement();
 
-
-                    int filasAfectadas = statement.executeUpdate(query);
-
-                    if (filasAfectadas > 0) {
-
-                        JOptionPane.showMessageDialog(null, "Miembro elimnado con exito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    try (ResultSet resultSet = statement.executeQuery(Entrenadoresquery);) {
+                        while (resultSet.next()) {
+                            id.setText(resultSet.getString("entrenador_id"));
+                            nombre.setText(resultSet.getString("nombre"));
+                            edad.setText(resultSet.getString("telefono"));
+                            sueldo.setText(resultSet.getString("edad"));
+                            }
                     }
+
+                    try (ResultSet resultSetUsuarios = statement.executeQuery(Usuariosquery);) {
+                        while (resultSetUsuarios.next()) {
+                            rol.setText(resultSetUsuarios.getString("rol"));
+                        }
+                    }
+
                 } catch (SQLException ex) {
 
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Error al insertar los datos... \nIngrese correctamente el ID", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -75,4 +84,3 @@ public class EliminarMiem {
         });
     }
 }
-

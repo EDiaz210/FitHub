@@ -1,20 +1,16 @@
-package Miembros;
+package Entrenadores;
+
 import LogIn.LogIn;
 import Menus.MenuAdm;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.*;
 
-public class ActuaMiem {
-    public JPanel actuMiem;
+public class ActuAdm {
+    public JPanel ATE;
     private JTextField textField1;
     private JTextField textField2;
     private JButton volverButton;
@@ -25,21 +21,22 @@ public class ActuaMiem {
     private JLabel nombre;
 
 
-    public ActuaMiem() {
+    public ActuAdm() {
         actualizarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 String queryUsuarios = "SELECT * FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
-                String queryMiembrosSelect = "SELECT * FROM miembros";
-                String queryMiembros = "UPDATE miembros SET fecha_ingreso = ?, telefono = ? WHERE miembro_id = '" + textField1.getText() + "'";
+                String queryEntrenadoresSelect = "SELECT * FROM entrenadores";
+                String queryEntrenadores = "UPDATE entrenadores SET telefono = ?, edad = ? WHERE entrenador_id = '" + textField1.getText() + "'";
 
                 String cedula = textField1.getText().trim();
                 String telefono = textField2.getText().trim();
-                String fecha_ingreso = textField3.getText().trim();
+                String edadText = textField3.getText().trim();
+
 
                 // Verificar que los campos no estén vacíos
-                if (cedula.isEmpty() || telefono.isEmpty() || fecha_ingreso.isEmpty()) {
+                if (cedula.isEmpty() || telefono.isEmpty() || edadText.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
@@ -51,19 +48,17 @@ public class ActuaMiem {
                 }
 
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                sdf.setLenient(false);  // No aceptar fechas inválidas (como "2024-02-30")
-
-                // Validar la fecha
+                // Validar que la edad sea un número válido
+                int edad;
                 try {
-                    sdf.parse(fecha_ingreso); // Intenta parsear la fecha
-                    JOptionPane.showMessageDialog(null, "Fecha válida.");
-                } catch (ParseException eX) {
-                    JOptionPane.showMessageDialog(null, "Fecha inválida. Asegúrate de usar el formato yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+                    edad = Integer.parseInt(edadText);
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "La edad debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
 
-
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = LogIn.ConexionBD.getConnection()) {
                     Statement statement = connection.createStatement();
                     connection.setAutoCommit(false);
 
@@ -75,8 +70,8 @@ public class ActuaMiem {
                         }
                     }
 
-                    try (PreparedStatement stmtEntrenadores = connection.prepareStatement(queryMiembrosSelect)) {
-                        try (ResultSet resultSet = statement.executeQuery(queryMiembrosSelect)) {
+                    try (PreparedStatement stmtEntrenadores = connection.prepareStatement(queryEntrenadoresSelect)) {
+                        try (ResultSet resultSet = statement.executeQuery(queryEntrenadoresSelect)) {
                             while (resultSet.next()) {
                                 nombre.setText(resultSet.getString("nombre"));
                             }
@@ -84,28 +79,28 @@ public class ActuaMiem {
                     }
 
                     // Actualizar en la tabla entrenadores
-                    try (PreparedStatement stmtEntrenadores2 = connection.prepareStatement(queryMiembros)) {
-                        stmtEntrenadores2.setString(1, fecha_ingreso);
-                        stmtEntrenadores2.setString(2, telefono);
+                    try (PreparedStatement stmtEntrenadores2 = connection.prepareStatement(queryEntrenadores)) {
+                        stmtEntrenadores2.setString(1, telefono);
+                        stmtEntrenadores2.setInt(2,edad);
                         stmtEntrenadores2.executeUpdate();
                     }
 
                     // Confirmar la transacción
                     connection.commit();
-                    JOptionPane.showMessageDialog(null, "Datos del miembro actualizados exitosamente.");
+                    JOptionPane.showMessageDialog(null, "Datos del entrenador actualizados exitosamente.");
 
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+                } catch (Exception eX) {
+                    eX.printStackTrace();
                     try (Connection connection = LogIn.ConexionBD.getConnection()) {
                         connection.rollback();
                     } catch (Exception rollbackEx) {
                         rollbackEx.printStackTrace();
                     }
                 }
-                }
-            }
-        });
 
+            }
+
+        });
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -123,4 +118,3 @@ public class ActuaMiem {
         });
     }
 }
-

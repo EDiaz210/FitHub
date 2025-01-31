@@ -1,9 +1,11 @@
 package Menus;
 
-import Administradores.ActuAdm;
-import Administradores.BuscarAdm;
-import Administradores.ElimAdm;
+import Entrenadores.ActuAdm;
+import Entrenadores.BuscarAdm;
+import Entrenadores.CrearAdm;
+import Entrenadores.ElimAdm;
 import LogIn.LogIn;
+import Miembros.ActuaMiem;
 import Miembros.BuscarMiem;
 import Miembros.CrearMiem;
 import Miembros.EliminarMiem;
@@ -18,7 +20,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
 
 public class MenuAdm {
     public JPanel menu;
@@ -49,9 +50,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Login");
-                frame.setSize(350, 350);
-                frame.setContentPane(new CrearMiem().crearMiem);
+                frame.setSize(450, 400);
+                frame.setContentPane(new CrearMiem().CMIEM);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(crearMiembroButton)).dispose();
             }
@@ -62,9 +65,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Buscar Miembro");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new BuscarMiem().BuscarMiem);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(buscarMiembroButton)).dispose();
             }
@@ -75,9 +80,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Actualizar Miembro");
-                frame.setSize(350, 350);
-                frame.setContentPane(new BuscarMiem().BuscarMiem);
+                frame.setSize(450, 400);
+                frame.setContentPane(new ActuaMiem().actuMiem);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizarMiembroButton)).dispose();
 
@@ -89,9 +96,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Eliminar Miembro");
-                frame.setSize(350, 350);
+                frame.setSize(500, 590);
                 frame.setContentPane(new EliminarMiem().ElimMiem);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(eliminarEntrenadorButton)).dispose();
             }
@@ -104,10 +113,12 @@ public class MenuAdm {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
-                frame.setTitle("Crear Miembro");
-                frame.setSize(350, 350);
-                frame.setContentPane(new BuscarAdm().BADM);
+                frame.setTitle("Crear Entrenador");
+                frame.setSize(450, 400);
+                frame.setContentPane(new CrearAdm().CADM);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(crearEntrenadorButton)).dispose();
             }
@@ -118,9 +129,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Buscar Entrenador");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new BuscarAdm().BADM);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(buscarEntrenadorButton)).dispose();
             }
@@ -131,9 +144,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Actualizar Entrenador");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new ActuAdm().ATE);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(actualizarEntrenadorButton)).dispose();
             }
@@ -144,9 +159,11 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Eliminar Entrenador");
-                frame.setSize(350, 350);
-                frame.setContentPane(new ElimAdm().EME);
+                frame.setSize(500, 590);
+                frame.setContentPane(new ElimAdm().ElimMiem);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(eliminarMiembroButton)).dispose();
             }
@@ -164,6 +181,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new AgregarServ().CRS);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(crearServicioButton)).dispose();
             }
@@ -177,6 +196,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new VerServ().VRS);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(verServiciosButton)).dispose();
             }
@@ -190,6 +211,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new BuscarServ().BRS);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(buscarServicioButton)).dispose();
             }
@@ -207,6 +230,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new AgregarPago().ARP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(crearPagoButton)).dispose();
             }
@@ -220,12 +245,13 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new VerPagos().VRP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(verPagosButton)).dispose();
             }
         });
-        buscarPagosButton.addComponentListener(new ComponentAdapter() {
-        });
+
         buscarPagosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,6 +261,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new BuscarPagos().BRP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(buscarPagosButton)).dispose();
             }
@@ -248,6 +276,8 @@ public class MenuAdm {
                 frame.setSize(350, 350);
                 frame.setContentPane(new MenuAdm().menu);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
                 ((JFrame) SwingUtilities.getWindowAncestor(volverButton)).dispose();
             }

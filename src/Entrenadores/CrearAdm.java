@@ -1,4 +1,4 @@
-package Miembros;
+package Entrenadores;
 
 import LogIn.LogIn;
 import Menus.MenuAdm;
@@ -10,12 +10,10 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
-public class CrearMiem {
-    private JButton button1;
-    public JPanel CMIEM;
+public class CrearAdm {
+    public JPanel CADM;
+    private JButton registrarButton;
     private JTextField JTextField1;
     private JTextField JTextField4;
     private JTextField JTextField3;
@@ -23,23 +21,22 @@ public class CrearMiem {
     private JButton volverButton;
     private JLabel ImagenLogin;
 
-
-    public CrearMiem() {
-        button1.addActionListener(new ActionListener() {
+    public CrearAdm() {
+        registrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 String Usuariosquery = "INSERT INTO usuarios (cedula_usuario, rol) VALUES (?, ?)";
-                String Entrenadoresquery = "INSERT INTO miembros (miembro_id, nombre, fecha_ingreso,telefono) VALUES (?, ?, ?, ?)";
+                String Entrenadoresquery = "INSERT INTO entrenadores (entrenador_id, nombre ,telefono, edad) VALUES (?, ?, ?, ?)";
 
                 String id = JTextField1.getText().trim();
                 String nombre = JTextField2.getText().trim();
-                String fecha_ingreso = JTextField3.getText().trim();
-                String telefono = JTextField4.getText().trim();
-                String rol = "Miembro";
+                String telefono = JTextField3.getText().trim();
+                String edadText = JTextField4.getText().trim();
+                String rol = "Entrenador";
 
                 // Verificar que los campos no estén vacíos
-                if (id.isEmpty() || telefono.isEmpty() || fecha_ingreso.isEmpty()) {
+                if (id.isEmpty() || telefono.isEmpty() || edadText.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
@@ -51,20 +48,18 @@ public class CrearMiem {
                 }
 
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                sdf.setLenient(false);  // No aceptar fechas inválidas (como "2024-02-30")
-
-                // Validar la fecha
+                // Validar que la edad sea un número válido
+                int edad;
                 try {
-                    sdf.parse(fecha_ingreso); // Intenta parsear la fecha
-                    JOptionPane.showMessageDialog(null, "Fecha válida.");
-                } catch (ParseException eX) {
-                    JOptionPane.showMessageDialog(null, "Fecha inválida. Asegúrate de usar el formato yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+                    edad = Integer.parseInt(edadText);
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "La edad debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
 
 
-
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = LogIn.ConexionBD.getConnection()) {
                     connection.setAutoCommit(false);
 
                     // Insertar en la tabla usuarios
@@ -78,9 +73,8 @@ public class CrearMiem {
                     try (PreparedStatement stmtEntrenadores = connection.prepareStatement(Entrenadoresquery)) {
                         stmtEntrenadores.setString(1, id);
                         stmtEntrenadores.setString(2, nombre);
-                        stmtEntrenadores.setString(3, fecha_ingreso);
-                        stmtEntrenadores.setString(4, telefono);
-
+                        stmtEntrenadores.setString(3, telefono);
+                        stmtEntrenadores.setInt(4, edad);
                         stmtEntrenadores.executeUpdate();
                     }
 
@@ -93,10 +87,9 @@ public class CrearMiem {
                 }
 
             }
-            }
+
+
         });
-
-
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,4 +107,3 @@ public class CrearMiem {
         });
     }
 }
-

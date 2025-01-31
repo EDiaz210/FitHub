@@ -1,4 +1,4 @@
-package Miembros;
+package Entrenadores;
 
 import LogIn.LogIn;
 import Menus.MenuAdm;
@@ -11,14 +11,14 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EliminarMiem {
+public class ElimAdm {
     public JPanel ElimMiem;
     private JTextField textField1;
     private JButton eliminarButton;
     private JLabel ImagenLogin;
     private JButton volverButton;
 
-    public EliminarMiem() {
+    public ElimAdm() {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,7 +49,7 @@ public class EliminarMiem {
 
                     if (filasAfectadas > 0) {
 
-                        JOptionPane.showMessageDialog(null, "Miembro elimnado con exito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Entrenador elimnado con exito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } catch (SQLException ex) {
 
@@ -75,4 +75,3 @@ public class EliminarMiem {
         });
     }
 }
-
