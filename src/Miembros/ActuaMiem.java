@@ -50,16 +50,26 @@ public class ActuaMiem {
                     return;
                 }
 
+                // Verificar manualmente si la fecha cumple con el formato correcto antes de parsear
+                if (!fecha_ingreso.matches("\\d{4}-\\d{2}-\\d{2}")) {
+                    JOptionPane.showMessageDialog(null, "Formato incorrecto. Usa yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+                    return; // Salir si el formato es incorrecto
+                }
+
+                // Verificar manualmente si la fecha cumple con el formato correcto antes de parsear
+                if (!fecha_ingreso.matches("\\d{4}-\\d{2}-\\d{2}")) {
+                    JOptionPane.showMessageDialog(null, "Formato incorrecto. Usa yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+                    return; // Salir si el formato es incorrecto
+                }
+
 
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                sdf.setLenient(false);  // No aceptar fechas inválidas (como "2024-02-30")
+                sdf.setLenient(true);  // No aceptar fechas inválidas (como "2024-02-30")
 
                 // Validar la fecha
                 try {
                     sdf.parse(fecha_ingreso); // Intenta parsear la fecha
-                    JOptionPane.showMessageDialog(null, "Fecha válida.");
-                } catch (ParseException eX) {
-                    JOptionPane.showMessageDialog(null, "Fecha inválida. Asegúrate de usar el formato yyyy-MM-dd", "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (ParseException eX) {}
 
 
 
@@ -103,7 +113,6 @@ public class ActuaMiem {
                     }
                 }
                 }
-            }
         });
 
         volverButton.addActionListener(new ActionListener() {
