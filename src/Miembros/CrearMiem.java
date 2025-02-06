@@ -1,5 +1,6 @@
 package Miembros;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class CrearMiem {
+public class CrearMiem extends Conexion {
     private JButton button1;
     public JPanel CMIEM;
     private JTextField JTextField1;
@@ -72,7 +73,7 @@ public class CrearMiem {
 
 
 
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                    try (Connection connection = connect()) {
                     connection.setAutoCommit(false);
 
                     // Insertar en la tabla usuarios
@@ -114,7 +115,7 @@ public class CrearMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -125,7 +126,7 @@ public class CrearMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

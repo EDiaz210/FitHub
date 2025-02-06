@@ -1,5 +1,6 @@
 package Miembros;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -13,7 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EliminarMiem {
+public class EliminarMiem extends Conexion {
     public JPanel ElimMiem;
     private JTextField textField1;
     private JButton eliminarButton;
@@ -40,7 +41,7 @@ public class EliminarMiem {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     System.out.println("Conectado a la base de datos");
 
                     String query = "DELETE  FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
@@ -70,7 +71,7 @@ public class EliminarMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -81,7 +82,7 @@ public class EliminarMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

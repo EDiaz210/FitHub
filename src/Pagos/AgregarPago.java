@@ -1,4 +1,5 @@
 package Pagos;
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -12,7 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AgregarPago {
+public class AgregarPago extends Conexion {
     public JPanel ARP;
     private JTextField textField1;
     private JTextField textField2;
@@ -54,7 +55,7 @@ public class AgregarPago {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     connection.setAutoCommit(false);
 
 
@@ -90,7 +91,7 @@ public class AgregarPago {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -102,7 +103,7 @@ public class AgregarPago {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

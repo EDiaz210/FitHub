@@ -1,15 +1,14 @@
 package Entrenadores;
-
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class ActuAdm {
+public class ActuAdm extends Conexion {
     public JPanel ATE;
     private JTextField textField1;
     private JTextField textField2;
@@ -58,7 +57,7 @@ public class ActuAdm {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     Statement statement = connection.createStatement();
                     connection.setAutoCommit(false);
 
@@ -91,16 +90,12 @@ public class ActuAdm {
 
                 } catch (Exception eX) {
                     eX.printStackTrace();
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
-                        connection.rollback();
-                    } catch (Exception rollbackEx) {
-                        rollbackEx.printStackTrace();
-                    }
+                    JOptionPane.showMessageDialog(null, "No se ha podido actualizar.");
                 }
-
             }
 
         });
+
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

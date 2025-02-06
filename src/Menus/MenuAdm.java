@@ -1,5 +1,6 @@
 package Menus;
 
+import Conexion.Conexion;
 import Entrenadores.ActuAdm;
 import Entrenadores.BuscarAdm;
 import Entrenadores.CrearAdm;
@@ -29,7 +30,7 @@ import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
 import java.sql.*;
 
-public class MenuAdm {
+public class MenuAdm extends Conexion {
     public JPanel menu;
     private JTabbedPane tabbedPane1;
     private JButton crearMiembroButton;
@@ -282,7 +283,7 @@ public class MenuAdm {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Menú Administrador");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new MenuAdm().menu);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
@@ -310,7 +311,7 @@ public class MenuAdm {
             public void actionPerformed(ActionEvent e) {
                 String rutaArchivo = "C:\\Users\\elkin\\Desktop\\BaseDeDatos.pdf";
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     Document document = new Document();
                     PdfWriter.getInstance(document, new FileOutputStream(rutaArchivo));
                     document.open();

@@ -1,5 +1,6 @@
 package Entrenadores;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 
@@ -11,7 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ElimAdm {
+public class ElimAdm extends Conexion {
     public JPanel ElimMiem;
     private JTextField textField1;
     private JButton eliminarButton;
@@ -38,7 +39,7 @@ public class ElimAdm {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     System.out.println("Conectado a la base de datos");
 
                     String query = "DELETE  FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";

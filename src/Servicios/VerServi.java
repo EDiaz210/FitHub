@@ -1,5 +1,6 @@
 package Servicios;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -15,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class VerServi {
+public class VerServi extends Conexion {
     public JPanel panel1;
     private JPanel VRS;
     private JButton mostrarServiciosButton;
@@ -36,7 +37,7 @@ public class VerServi {
         mostrarServiciosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     Statement statement = connection.createStatement();
                     String query = "SELECT * FROM servicios";
                     ResultSet resultSet = statement.executeQuery(query);
@@ -84,7 +85,7 @@ public class VerServi {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -96,7 +97,7 @@ public class VerServi {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

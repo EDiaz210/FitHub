@@ -1,5 +1,6 @@
 package Miembros;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -15,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class BuscarMiem {
+public class BuscarMiem extends Conexion {
     public JPanel BuscarMiem;
     private JTextField textField1;
     private JButton buscarButton;
@@ -46,7 +47,7 @@ public class BuscarMiem {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
 
                     String Usuariosquery = "SELECT * FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
                     String Miembrosquery = "SELECT * FROM miembros WHERE miembro_id = '" + textField1.getText() + "'";
@@ -83,7 +84,7 @@ public class BuscarMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -94,7 +95,7 @@ public class BuscarMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

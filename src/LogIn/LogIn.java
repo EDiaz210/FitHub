@@ -1,5 +1,5 @@
 package LogIn;
-
+import Conexion.Conexion;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
 import Menus.MenuMiembros;
@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class LogIn {
+public class LogIn extends Conexion{
     private JTextField textField1;
     private JLabel ImagenLogin;
     private JComboBox comboBox1;
@@ -45,7 +45,7 @@ public class LogIn {
                 String seleccionado = (String) comboBox1.getSelectedItem();
                 UsuarioSesion.getInstancia().setRolUsuario(seleccionado);
 
-                try (Connection connection = ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     Statement statement = connection.createStatement();
                     String query = "SELECT * FROM usuarios WHERE cedula_usuario = '" + textField1.getText() + "'";
                     ResultSet resultSet = statement.executeQuery(query);
@@ -59,7 +59,7 @@ public class LogIn {
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(350, 350);
+                                    frame.setSize(450, 400);
                                     frame.setContentPane(new MenuAdm().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setResizable(false);
@@ -72,7 +72,7 @@ public class LogIn {
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(350, 300);
+                                    frame.setSize(450, 400);
                                     frame.setContentPane(new MenuMiembros().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setResizable(false);
@@ -85,7 +85,7 @@ public class LogIn {
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(350, 350);
+                                    frame.setSize(450, 400);
                                     frame.setContentPane(new MenuEntre().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setResizable(false);
@@ -106,25 +106,4 @@ public class LogIn {
             }
         });
     }
-
-
-
-    public static class ConexionBD {
-        private static final String url = "jdbc:mysql://b3qj80cggc278lxxb5pg-mysql.services.clever-cloud.com:3306/b3qj80cggc278lxxb5pg?useSSL=false&serverTimezone=UTC";
-        private static final String username = "uetysrfgsp7pzfna";
-        private static final String password = "K8U7u88YU0iLPn2xDHUx";
-
-        public static Connection getConnection() throws SQLException {
-            Connection conn = null;
-            try {
-                conn = DriverManager.getConnection(url, username, password);
-                System.out.println("Conexión exitosa a la base de datos");
-            } catch (SQLException e) {
-                System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-                throw e;
-            }
-            return conn;
-        }
-    }
-
 }

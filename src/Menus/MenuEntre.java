@@ -201,7 +201,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("MenÃº Administrador");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new MenuEntre().menu);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);

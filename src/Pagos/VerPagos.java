@@ -1,10 +1,9 @@
 package Pagos;
 
-import LogIn.LogIn;
+import Conexion.Conexion;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
 import Rol.UsuarioSesion;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -15,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class VerPagos {
+public class VerPagos extends Conexion {
     public JPanel VRP;
     private JButton volverButton;
     private JPanel panel1;
@@ -37,7 +36,7 @@ public class VerPagos {
         mostrarPagosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
                     Statement statement = connection.createStatement();
                     String query = "SELECT * FROM pagos";
                     ResultSet resultSet = statement.executeQuery(query);
@@ -85,7 +84,7 @@ public class VerPagos {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -97,7 +96,7 @@ public class VerPagos {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

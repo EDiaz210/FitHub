@@ -1,5 +1,6 @@
 package Pagos;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -14,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class BuscarPagos {
+public class BuscarPagos extends Conexion {
     public JPanel BRP;
     private JTextField textField1;
     private JButton buscarButton;
@@ -44,7 +45,7 @@ public class BuscarPagos {
                 }
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect()) {
 
                     String Serviciosquery = "SELECT * FROM pagos WHERE pagos_id = '" + textField1.getText() + "'";
                     String Miembrosquery = "SELECT * FROM miembros WHERE miembro_id = '" + textField1.getText() + "'";
@@ -81,7 +82,7 @@ public class BuscarPagos {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -93,7 +94,7 @@ public class BuscarPagos {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);

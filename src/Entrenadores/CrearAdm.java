@@ -1,5 +1,6 @@
 package Entrenadores;
 
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 
@@ -11,7 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class CrearAdm {
+public class CrearAdm extends Conexion {
     public JPanel CADM;
     private JButton registrarButton;
     private JTextField JTextField1;
@@ -59,7 +60,7 @@ public class CrearAdm {
 
 
 
-                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                try (Connection connection = connect() ) {
                     connection.setAutoCommit(false);
 
                     // Insertar en la tabla usuarios

@@ -1,4 +1,5 @@
 package Miembros;
+import Conexion.Conexion;
 import LogIn.LogIn;
 import Menus.MenuAdm;
 import Menus.MenuEntre;
@@ -16,7 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 
-public class ActuaMiem {
+public class ActuaMiem extends Conexion {
     public JPanel actuMiem;
     private JTextField textField1;
     private JTextField textField2;
@@ -76,7 +77,7 @@ public class ActuaMiem {
 
 
 
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                    try (Connection connection = connect()) {
                     Statement statement = connection.createStatement();
                     connection.setAutoCommit(false);
 
@@ -109,13 +110,11 @@ public class ActuaMiem {
 
                 } catch (Exception ex) {
                     ex.printStackTrace();
-                    try (Connection connection = LogIn.ConexionBD.getConnection()) {
-                        connection.rollback();
-                    } catch (Exception rollbackEx) {
-                        rollbackEx.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "No se ha podido actualizar.");
+
+
                     }
-                }
-                }
+            }
         });
 
         volverButton.addActionListener(new ActionListener() {
@@ -128,7 +127,7 @@ public class ActuaMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Administrador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuAdm().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
@@ -139,7 +138,7 @@ public class ActuaMiem {
                     JFrame frame = new JFrame();
                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                     frame.setTitle("Menú Entrenador");
-                    frame.setSize(350, 350);
+                    frame.setSize(450, 400);
                     frame.setContentPane(new MenuEntre().menu);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
