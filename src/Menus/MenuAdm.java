@@ -308,7 +308,78 @@ public class MenuAdm {
         gnerearReporteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String rutaArchivo = "C:\\Users\\elkin\\Desktop\\BaseDeDatos.pdf";
 
+                try (Connection connection = LogIn.ConexionBD.getConnection()) {
+                    Document document = new Document();
+                    PdfWriter.getInstance(document, new FileOutputStream(rutaArchivo));
+                    document.open();
+
+                    // Agregar el título "Reportes" al inicio
+                    Font fontTituloR = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD); // Tamaño 18 y negrita
+                    Paragraph tituloR = new Paragraph("Reportes", fontTituloR);
+                    tituloR.setAlignment(Element.ALIGN_CENTER); // Alineación centrada
+                    tituloR.setSpacingAfter(20); // Espacio después del título
+                    document.add(tituloR);
+
+                    // Obtener todas las tablas de la base de datos
+                    DatabaseMetaData metaData = connection.getMetaData();
+                    ResultSet tablas = metaData.getTables(null, null, "%", new String[]{"TABLE"});
+
+                    while (tablas.next()) {
+                        String nombreTabla = tablas.getString("TABLE_NAME"); // Obtener nombre de la tabla
+                        System.out.println("Tabla: " + nombreTabla);
+
+                        // Agregar título de la tabla
+                        Font fontTitulo = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
+                        Paragraph titulo = new Paragraph(nombreTabla.toUpperCase(), fontTitulo);
+                        titulo.setAlignment(Element.ALIGN_CENTER);
+                        titulo.setSpacingAfter(10);
+                        document.add(titulo);
+
+                        // Crear tabla PDF
+                        PdfPTable pdfTable = new PdfPTable(getColumnCount(connection, nombreTabla));
+                        pdfTable.setWidthPercentage(100);
+
+                        // Obtener datos de la tabla
+                        Statement statement = connection.createStatement();
+                        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + nombreTabla);
+                        ResultSetMetaData rsmd = resultSet.getMetaData();
+                        int columnCount = rsmd.getColumnCount();
+
+                        // Agregar nombres de columnas al PDF
+                        for (int i = 1; i <= columnCount; i++) {
+                            PdfPCell cell = new PdfPCell(new Phrase(rsmd.getColumnName(i)));
+                            cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                            pdfTable.addCell(cell);
+                        }
+
+                        // Agregar datos de la tabla
+                        while (resultSet.next()) {
+                            for (int i = 1; i <= columnCount; i++) {
+                                pdfTable.addCell(resultSet.getString(i));
+                            }
+                        }
+
+                        document.add(pdfTable);
+                        document.add(new Paragraph("\n\n")); // Espacio entre tablas
+                    }
+
+                    document.close();
+                    JOptionPane.showMessageDialog(null, "PDF generado con éxito: " + rutaArchivo);
+
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al generar el PDF.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+            // Método para obtener la cantidad de columnas de una tabla
+            private static int getColumnCount(Connection connection, String tableName) throws SQLException {
+                Statement stmt = connection.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM " + tableName + " LIMIT 1");
+                return rs.getMetaData().getColumnCount();
             }
         });
     }
