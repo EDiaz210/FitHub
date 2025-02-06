@@ -72,7 +72,7 @@ public class LogIn extends Conexion{
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
-                                    frame.setSize(450, 400);
+                                    frame.setSize(1050, 400);
                                     frame.setContentPane(new MenuMiembros().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setResizable(false);

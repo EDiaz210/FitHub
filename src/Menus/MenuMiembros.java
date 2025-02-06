@@ -2,20 +2,23 @@ package Menus;
 
 import javax.swing.*;
 
-public class MenuMiembros {
+public class MenuMiembros extends JFrame{
     public JPanel menu;
     private JTabbedPane tabbedPane1;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
-    private JTextArea textArea3;
     private JButton pagarButton;
-    private JList list1;
-    private JList list2;
-    private JList list3;
-    private JList list4;
-    private JList list5;
-    private JList list6;
-    private JButton comprarButton;
-    private JButton comprarButton1;
-    private JButton comprarButton2;
+    private JList listaLunes;
+    private JList listaMartes;
+    private JList listaMierco;
+    private JList listaJueves;
+    private JList listaViernes;
+    private JList listaSabado;
+    private JButton comprarSuple;
+    private JButton comprarDieta;
+    private JButton comprarMembresia;
+    private JButton verRutina;
+    private JLabel etiquetaMembresia;
+    private JLabel etiquetaDieta;
+    private JLabel etiquetaSuple;
+    private JButton cerrarSesiónButton;
+    private JLabel etiquetaTotal;
 }
