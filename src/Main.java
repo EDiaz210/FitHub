@@ -11,6 +11,6 @@ public class Main {
         jp.setSize(500,590);
         jp.setResizable(false);
         jp.setLocationRelativeTo(null);
-        jp.setVisible(true); //Hola
+        jp.setVisible(true);
     }
 }

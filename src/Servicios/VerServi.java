@@ -1,4 +1,4 @@
-package Pagos;
+package Servicios;
 
 import LogIn.LogIn;
 import Menus.MenuAdm;
@@ -15,17 +15,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class VerPagos {
-    public JPanel VRP;
+public class VerServi {
+    public JPanel panel1;
+    private JPanel VRS;
+    private JButton mostrarServiciosButton;
     private JButton volverButton;
-    private JPanel panel1;
-    private JButton mostrarPagosButton;
     private JTable table1;
-    private JScrollPane scrollPane;
-
-
+    private JScrollPane scrollPane; // Agregar JScrollPane como atributo
 
 }
-
-
-

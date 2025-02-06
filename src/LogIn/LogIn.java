@@ -1,7 +1,10 @@
 package LogIn;
 
 import Menus.MenuAdm;
+import Menus.MenuEntre;
 import Menus.MenuMiembros;
+import Rol.UsuarioSesion;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +18,10 @@ public class LogIn {
     private JButton ingresarButton;
     public JPanel Login;
 
+
+    public JComboBox getComboBox1() {
+        return comboBox1;
+    }
 
     public LogIn() {
         ingresarButton.addActionListener(new ActionListener() {
@@ -35,7 +42,8 @@ public class LogIn {
                     return;
                 }*/
 
-
+                String seleccionado = (String) comboBox1.getSelectedItem();
+                UsuarioSesion.getInstancia().setRolUsuario(seleccionado);
 
                 try (Connection connection = ConexionBD.getConnection()) {
                     Statement statement = connection.createStatement();
@@ -73,12 +81,12 @@ public class LogIn {
                                     ((JFrame) SwingUtilities.getWindowAncestor(ingresarButton)).dispose();
 
                                 }else if (resultSet.getString("rol").equals("Entrenador")) {
-                                    System.out.println("Ingresaste a modo usuario ");
+                                    System.out.println("Ingresaste a entrenador ");
                                     JFrame frame = new JFrame();
                                     frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                                     frame.setTitle("Login");
                                     frame.setSize(350, 350);
-                                    frame.setContentPane(new MenuAdm().menu);
+                                    frame.setContentPane(new MenuEntre().menu);
                                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                     frame.setResizable(false);
                                     frame.setLocationRelativeTo(null);
@@ -102,13 +110,21 @@ public class LogIn {
 
 
     public static class ConexionBD {
-        private static final String url = "jdbc:mysql://localhost:3306/fithub";
-        private static final String username = "root";
-        private static final String password = "123456";
+        private static final String url = "jdbc:mysql://b3qj80cggc278lxxb5pg-mysql.services.clever-cloud.com:3306/b3qj80cggc278lxxb5pg?useSSL=false&serverTimezone=UTC";
+        private static final String username = "uetysrfgsp7pzfna";
+        private static final String password = "K8U7u88YU0iLPn2xDHUx";
+
         public static Connection getConnection() throws SQLException {
-            return DriverManager.getConnection(url,username, password);
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection(url, username, password);
+                System.out.println("Conexión exitosa a la base de datos");
+            } catch (SQLException e) {
+                System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+                throw e;
+            }
+            return conn;
         }
-
-
     }
+
 }

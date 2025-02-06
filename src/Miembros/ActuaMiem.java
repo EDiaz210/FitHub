@@ -1,6 +1,9 @@
 package Miembros;
 import LogIn.LogIn;
 import Menus.MenuAdm;
+import Menus.MenuEntre;
+import Rol.UsuarioSesion;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class ActuaMiem {
     public JPanel actuMiem;
@@ -118,16 +121,33 @@ public class ActuaMiem {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame();
-                frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
-                frame.setTitle("Menú Administrador");
-                frame.setSize(350, 350);
-                frame.setContentPane(new MenuAdm().menu);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-                frame.setResizable(false);
-                frame.setLocationRelativeTo(null);
-                ((JFrame) SwingUtilities.getWindowAncestor(volverButton)).dispose();
+                String rolUsuario = UsuarioSesion.getInstancia().getRolUsuario();
+
+
+                if ("Administrador".equals(rolUsuario)) {
+                    JFrame frame = new JFrame();
+                    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
+                    frame.setTitle("Menú Administrador");
+                    frame.setSize(350, 350);
+                    frame.setContentPane(new MenuAdm().menu);
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setVisible(true);
+                    frame.setResizable(false);
+                    frame.setLocationRelativeTo(null);
+                    (SwingUtilities.getWindowAncestor(volverButton)).dispose();
+                } else if ("Entrenador".equals(rolUsuario)) {
+                    JFrame frame = new JFrame();
+                    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
+                    frame.setTitle("Menú Entrenador");
+                    frame.setSize(350, 350);
+                    frame.setContentPane(new MenuEntre().menu);
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setVisible(true);
+                    frame.setResizable(false);
+                    frame.setLocationRelativeTo(null);
+                    (SwingUtilities.getWindowAncestor(volverButton)).dispose();
+                }
+
             }
         });
     }
