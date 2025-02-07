@@ -24,7 +24,9 @@
             <constraints>
               <tabbedpane title="Miembros"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="bfd76" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -62,6 +64,8 @@
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-13947600"/>
+                              <foreground color="-1"/>
                               <text value="Crear Miembro"/>
                             </properties>
                           </component>
@@ -82,6 +86,8 @@
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-13947600"/>
+                              <foreground color="-1"/>
                               <text value="Actualizar Miembro"/>
                             </properties>
                           </component>
@@ -114,6 +120,8 @@
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-13947600"/>
+                              <foreground color="-1"/>
                               <text value="Buscar Miembro"/>
                             </properties>
                           </component>
@@ -134,6 +142,8 @@
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-13947600"/>
+                              <foreground color="-1"/>
                               <text value="Eliminar Miembro"/>
                             </properties>
                           </component>
@@ -150,7 +160,9 @@
             <constraints>
               <tabbedpane title="Entrenadores"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="1171f" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -158,7 +170,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-1908014"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="fe38f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -166,7 +180,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="a4682" class="javax.swing.JButton" binding="crearEntrenadorButton" default-binding="true">
@@ -174,6 +190,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Crear Entrenador"/>
                         </properties>
                       </component>
@@ -184,7 +202,9 @@
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="be6ff" class="javax.swing.JButton" binding="actualizarEntrenadorButton" default-binding="true">
@@ -192,6 +212,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Actualizar Entrenador"/>
                         </properties>
                       </component>
@@ -204,7 +226,9 @@
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-1908014"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="f40e4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -212,7 +236,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="22130" class="javax.swing.JButton" binding="buscarEntrenadorButton" default-binding="true">
@@ -220,6 +246,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Buscar Entrenador"/>
                         </properties>
                       </component>
@@ -230,7 +258,9 @@
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="9ea0d" class="javax.swing.JButton" binding="eliminarEntrenadorButton" default-binding="true">
@@ -238,6 +268,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Eliminar Entrenador"/>
                         </properties>
                       </component>
@@ -252,7 +284,9 @@
             <constraints>
               <tabbedpane title="Servicios"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="4405e" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -260,7 +294,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-1908014"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="6f865" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -268,7 +304,9 @@
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="9dd8b" class="javax.swing.JButton" binding="buscarServicioButton" default-binding="true">
@@ -276,6 +314,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Buscar Servicio"/>
                         </properties>
                       </component>
@@ -286,7 +326,9 @@
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="b0551" class="javax.swing.JButton" binding="verServiciosButton" default-binding="true">
@@ -294,6 +336,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Ver Servicios"/>
                         </properties>
                       </component>
@@ -304,7 +348,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="1d29b" class="javax.swing.JButton" binding="crearServicioButton" default-binding="true">
@@ -312,6 +358,8 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Crear Servicio"/>
                         </properties>
                       </component>
@@ -320,7 +368,9 @@
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children/>
                       </grid>
@@ -329,7 +379,9 @@
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children/>
                       </grid>
@@ -344,7 +396,9 @@
             <constraints>
               <tabbedpane title="Pagos"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="17e97" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -352,7 +406,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-1908014"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="2832" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -360,7 +416,9 @@
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="6eae1" class="javax.swing.JButton" binding="buscarPagosButton" default-binding="true">
@@ -368,6 +426,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Buscar Pagos"/>
                         </properties>
                       </component>
@@ -378,7 +438,9 @@
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="7fe03" class="javax.swing.JButton" binding="verPagosButton" default-binding="true">
@@ -386,6 +448,8 @@
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Ver Pagos"/>
                         </properties>
                       </component>
@@ -396,7 +460,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="ca6b2" class="javax.swing.JButton" binding="crearPagoButton" default-binding="true">
@@ -404,6 +470,8 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-13947600"/>
+                          <foreground color="-1"/>
                           <text value="Crear Pago"/>
                         </properties>
                       </component>
@@ -412,7 +480,9 @@
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children/>
                       </grid>
@@ -421,7 +491,9 @@
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children/>
                       </grid>
@@ -436,7 +508,10 @@
             <constraints>
               <tabbedpane title="Reportes"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="2d159" class="javax.swing.JButton" binding="gnerearReporteButton" default-binding="true">
@@ -444,6 +519,8 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-13947600"/>
+                  <foreground color="-1"/>
                   <text value="Gnerear Reporte"/>
                 </properties>
               </component>
@@ -453,6 +530,7 @@
                 </constraints>
                 <properties>
                   <font name="Palatino Linotype" size="14" style="1"/>
+                  <foreground color="-16777216"/>
                   <text value="Reportes"/>
                 </properties>
               </component>
@@ -465,7 +543,9 @@
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="f3823" class="javax.swing.JButton" binding="volverButton" default-binding="true">
@@ -473,6 +553,8 @@
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-13947600"/>
+              <foreground color="-1"/>
               <text value="Volver"/>
             </properties>
           </component>
@@ -481,6 +563,8 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-13947600"/>
+              <foreground color="-1"/>
               <text value="Cerrar Sesion"/>
             </properties>
           </component>
@@ -510,6 +594,7 @@
         </constraints>
         <properties>
           <background color="-1908014"/>
+          <foreground color="-1"/>
         </properties>
         <border type="none"/>
         <children/>
