@@ -107,7 +107,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Crear Servicio");
-                frame.setSize(350, 350);
+                frame.setSize(500, 400);
                 frame.setContentPane(new AgregarServ().CRS);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
@@ -137,7 +137,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Buscar Servicio");
-                frame.setSize(350, 350);
+                frame.setSize(500, 400);
                 frame.setContentPane(new BuscarServ().BRS);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
@@ -155,7 +155,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Crear Pago");
-                frame.setSize(350, 350);
+                frame.setSize(500, 400);
                 frame.setContentPane(new AgregarPago().ARP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
@@ -170,7 +170,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Ver Pagos");
-                frame.setSize(350, 350);
+                frame.setSize(500, 400);
                 frame.setContentPane(new VerPagos().VRP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
@@ -186,7 +186,7 @@ public class MenuEntre {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Bucar Pago");
-                frame.setSize(350, 350);
+                frame.setSize(500, 400);
                 frame.setContentPane(new BuscarPagos().BRP);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);

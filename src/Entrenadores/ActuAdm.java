@@ -102,7 +102,7 @@ public class ActuAdm extends Conexion {
                 JFrame frame = new JFrame();
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/logo.jpeg"));
                 frame.setTitle("Menú Administrador");
-                frame.setSize(350, 350);
+                frame.setSize(450, 400);
                 frame.setContentPane(new MenuAdm().menu);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
