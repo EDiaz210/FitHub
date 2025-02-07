@@ -24,6 +24,7 @@ public class AgregarServ extends Conexion {
     private JTextField textField4;
     private JButton ingresarButton;
     private JButton volverButton;
+    private JComboBox comboBox1;
 
 
     public AgregarServ() {
@@ -34,13 +35,13 @@ public class AgregarServ extends Conexion {
                 String Serviciosquery = "INSERT INTO servicios (servicio_id, tipo_servicio, extras, costo_servicio, costo_extras) VALUES (?, ?, ?, ?, ?)";
 
                 String id = textField1.getText().trim();
-                String tipo_servicio = textField2.getText().trim();
-                String extras = textField3.getText().trim();
+                String tipo_servicio = "Membresía";
+                String extras = (String) comboBox1.getSelectedItem();
                 int costo_servicio = 30;
                 String  costo_extrasString = textField4.getText().trim();
 
                 // Verificar que los campos no estén vacíos
-                if (id.isEmpty() || tipo_servicio.isEmpty() || extras.isEmpty() || costo_extrasString.isEmpty()) {
+                if (id.isEmpty()  || costo_extrasString.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
