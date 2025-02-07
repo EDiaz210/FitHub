@@ -5,7 +5,9 @@
     <constraints>
       <xy x="20" y="20" width="513" height="400"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-1908014"/>
+    </properties>
     <border type="none"/>
     <children>
       <tabbedpane id="a3ce8" binding="tabbedPane1" default-binding="true">
@@ -30,7 +32,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-1908014"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="c4558" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -38,7 +42,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <grid id="acd03" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -46,7 +52,9 @@
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="d2b67" class="javax.swing.JButton" binding="crearMiembroButton" default-binding="true">
@@ -64,7 +72,9 @@
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="7d12b" class="javax.swing.JButton" binding="actualizarMiembroButton" default-binding="true">
@@ -84,7 +94,9 @@
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-1908014"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <grid id="87f86" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -92,7 +104,9 @@
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="d37ad" class="javax.swing.JButton" binding="buscarMiembroButton" default-binding="true">
@@ -110,7 +124,9 @@
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-1908014"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="644bc" class="javax.swing.JButton" binding="eliminarMiembroButton" default-binding="true">
@@ -492,7 +508,9 @@
         <constraints>
           <grid row="0" column="3" row-span="4" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
@@ -501,7 +519,9 @@
         <constraints>
           <grid row="0" column="0" row-span="4" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
