@@ -161,8 +161,8 @@ public class MenuMiembros extends JFrame {
     private int getValorEtiqueta(JLabel etiqueta) {
         String texto = etiqueta.getText();
         if (texto.isEmpty()) {
-            return 0; //
+            return 0; //0 para que permita sumar
         }
-        return Integer.parseInt(texto);
+        return Integer.parseInt(texto); // parser para trasnformar a entero
     }
 }
