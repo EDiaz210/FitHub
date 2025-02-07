@@ -5,7 +5,9 @@
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-1908014"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="64391" class="javax.swing.JLabel">
@@ -37,6 +39,8 @@
           <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-13947600"/>
+          <foreground color="-1"/>
           <text value="Ingresar"/>
         </properties>
       </component>
@@ -45,6 +49,8 @@
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-13947600"/>
+          <foreground color="-1"/>
           <text value="Volver"/>
         </properties>
       </component>
@@ -53,7 +59,9 @@
         <constraints>
           <grid row="1" column="3" row-span="8" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
@@ -62,7 +70,9 @@
         <constraints>
           <grid row="1" column="0" row-span="8" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>
