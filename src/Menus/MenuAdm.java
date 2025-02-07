@@ -309,7 +309,7 @@ public class MenuAdm extends Conexion {
         gnerearReporteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String rutaArchivo = "C:\\Users\\elkin\\Desktop\\BaseDeDatos.pdf";
+                String rutaArchivo = "C:\\Users\\POO\\Desktop\\BaseDeDatos.pdf";
 
                 try (Connection connection = connect()) {
                     Document document = new Document();

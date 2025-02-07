@@ -37,10 +37,10 @@ public class LogIn extends Conexion{
                 }
 
                 // Validar que la cedula contenga exactamente 10 dígitos numéricos
-                /*if (!cedula.matches("\\d{10}")) {
-                    JOptionPane.showMessageDialog(null, "El teléfono debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
+                if (!cedula.matches("\\d{10}")) {
+                    JOptionPane.showMessageDialog(null, "Su cédula debe contener exactamente 10 dígitos numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
-                }*/
+                }
 
                 String seleccionado = (String) comboBox1.getSelectedItem();
                 UsuarioSesion.getInstancia().setRolUsuario(seleccionado);

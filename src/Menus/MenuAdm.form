@@ -521,7 +521,7 @@
                 <properties>
                   <background color="-13947600"/>
                   <foreground color="-1"/>
-                  <text value="Gnerear Reporte"/>
+                  <text value="Generar reporte"/>
                 </properties>
               </component>
               <component id="f4601" class="javax.swing.JLabel">
