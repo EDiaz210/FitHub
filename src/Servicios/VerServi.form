@@ -10,7 +10,9 @@
       <grid id="1cc64" layout-manager="GridLayoutManager" row-count="2" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints border-constraint="Center"/>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="c79b3" class="javax.swing.JLabel">
@@ -40,12 +42,16 @@
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="a94bf" class="javax.swing.JButton" binding="mostrarServiciosButton" default-binding="true">
                 <constraints border-constraint="North"/>
                 <properties>
+                  <background color="-13947600"/>
+                  <foreground color="-1"/>
                   <text value="Mostrar Servicios"/>
                 </properties>
               </component>
@@ -66,7 +72,9 @@
       <grid id="629ed" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints border-constraint="South"/>
-        <properties/>
+        <properties>
+          <background color="-1908014"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="2cbf5" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -79,6 +87,8 @@
               <component id="514cd" class="javax.swing.JButton" binding="volverButton" default-binding="true">
                 <constraints border-constraint="Center"/>
                 <properties>
+                  <background color="-13947600"/>
+                  <foreground color="-1"/>
                   <text value="Volver"/>
                 </properties>
               </component>
@@ -88,7 +98,9 @@
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children/>
           </grid>
@@ -96,7 +108,9 @@
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children/>
           </grid>
@@ -104,7 +118,9 @@
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children/>
           </grid>
@@ -112,7 +128,9 @@
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children/>
           </grid>
@@ -120,7 +138,9 @@
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="f5912" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -135,7 +155,9 @@
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1908014"/>
+            </properties>
             <border type="none"/>
             <children/>
           </grid>
